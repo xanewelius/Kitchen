@@ -16,10 +16,10 @@ final class TabBarController: UITabBarController {
     }
     
     private func setupTabBar() {
-        guard let homeImage = UIImage(systemName: "house") else { return }
-        guard let searchImage = UIImage(systemName: "magnifyingglass") else { return }
-        guard let bagImage = UIImage(systemName: "bag") else { return }
-        guard let profileImage = UIImage(systemName: "person.crop.circle") else { return }
+        guard let homeImage = UIImage(named: "home") else { return }
+        guard let searchImage = UIImage(named: "search-normal") else { return }
+        guard let bagImage = UIImage(named: "bag") else { return }
+        guard let profileImage = UIImage(named: "profile-circle") else { return }
         
         viewControllers = [
             createNavigationController(vc: HomeViewController(), itemName: "Главная", itemImage: homeImage),

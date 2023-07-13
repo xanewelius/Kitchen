@@ -26,10 +26,10 @@ final class CustomNavigationBar: UIViewController {
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
         
-        let locationImage = UIImage(systemName: "location")
+        let locationImage = UIImage(named: "Icons")
         let locationImageView = UIImageView(image: locationImage)
         locationImageView.tintColor = .black
-        locationImageView.frame = CGRect(x: 0, y: 6, width: 24, height: 24) // Размер изображения и его позиция
+        locationImageView.frame = CGRect(x: 0, y: 0, width: 24, height: 24) // Размер изображения и его позиция
         
 
         navigationView.addSubview(locationImageView)
