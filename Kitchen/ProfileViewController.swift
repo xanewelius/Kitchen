@@ -18,7 +18,10 @@ final class ProfileViewController: UIViewController {
 private extension ProfileViewController {
     func configureView() {
         view.backgroundColor = .white
-        self.navigationItem.title = "Profile"
+        //self.navigationItem.title = "Profile"
+        let customNavigationBar = CustomNavigationBar()
+        self.navigationItem.titleView = customNavigationBar.setTitle()
+        self.navigationItem.titleView = customNavigationBar.setImage()
     }
     
     func layout() {

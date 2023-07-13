@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 final class HomeViewController: UIViewController {
     
@@ -14,6 +15,7 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocation()
         configureView()
         fetchData()
     }
@@ -44,7 +46,7 @@ private extension HomeViewController {
     func configureView() {
         view.backgroundColor = .white
         let customNavigationBar = CustomNavigationBar()
-        self.navigationItem.titleView = customNavigationBar.setTitle(title: "Санкт-Петербург", subtitle: "12 Августа, 2023")
+        self.navigationItem.titleView = customNavigationBar.setTitle()
         self.navigationItem.titleView = customNavigationBar.setImage()
         //navigationItem.rightBarButtonItem = customNavigationBar.setImage()
         collectionView.delegate = self
@@ -87,5 +89,23 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         collectionInsets.top
+    }
+}
+
+// MARK: - CLLocation
+extension HomeViewController: CLLocationManagerDelegate {
+    private func setupLocation() {
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let first = locations.first else { return }
+        let lat = String(first.coordinate.latitude)
+        let lon = String(first.coordinate.longitude)
+        print("agag")
     }
 }
