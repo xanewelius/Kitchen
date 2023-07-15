@@ -22,6 +22,7 @@
 		400B67222A6054AE008D883B /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400B67212A6054AD008D883B /* CustomNavigationBar.swift */; };
 		400B672C2A6179E2008D883B /* KitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400B672B2A6179E2008D883B /* KitchenViewController.swift */; };
 		400B672F2A62D059008D883B /* DishesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400B672E2A62D059008D883B /* DishesCollectionViewCell.swift */; };
+		400B67312A631D8B008D883B /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400B67302A631D8B008D883B /* DishViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		400B67212A6054AD008D883B /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		400B672B2A6179E2008D883B /* KitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenViewController.swift; sourceTree = "<group>"; };
 		400B672E2A62D059008D883B /* DishesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesCollectionViewCell.swift; sourceTree = "<group>"; };
+		400B67302A631D8B008D883B /* DishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				400B672B2A6179E2008D883B /* KitchenViewController.swift */,
 				400B672E2A62D059008D883B /* DishesCollectionViewCell.swift */,
+				400B67302A631D8B008D883B /* DishViewController.swift */,
 			);
 			path = Kitchen;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				400B67132A561A38008D883B /* SearchViewController.swift in Sources */,
 				400B672C2A6179E2008D883B /* KitchenViewController.swift in Sources */,
 				400B67152A561A54008D883B /* BagViewController.swift in Sources */,
+				400B67312A631D8B008D883B /* DishViewController.swift in Sources */,
 				400B67012A561241008D883B /* HomeViewController.swift in Sources */,
 				400B67112A56153A008D883B /* TabBarController.swift in Sources */,
 				400B671D2A6024F6008D883B /* HomeCollectionViewCell.swift in Sources */,

@@ -9,7 +9,7 @@ import UIKit
 
 final class KitchenViewController: UIViewController {
     
-    //private let kitchenViewCell = KitchenCollectionViewCell()
+    private let dishViewController = DishViewController()
     private let collectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     private var dishes: [Dishes] = []
     
@@ -99,10 +99,10 @@ extension KitchenViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let dishes = dishes[indexPath.item]
-        //dishes.fetchData(categories: category)
-        //collectionView.deselectItem(at: indexPath, animated: true)
-        //self.navigationController?.pushViewController(self.dishes, animated: true)
+        let dish = dishes[indexPath.item]
+        dishViewController.configure(with: dish)
+        dishViewController.modalPresentationStyle = .overFullScreen
+        present(dishViewController, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
