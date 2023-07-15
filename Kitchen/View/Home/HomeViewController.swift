@@ -22,7 +22,7 @@ final class HomeViewController: UIViewController {
     }
     
     private func fetchData() {
-        NetworkManager.shared.jsonPars { categoriesData in
+        NetworkManager.shared.jsonParsCategories { categoriesData in
             DispatchQueue.main.async {
                 self.categories = categoriesData
                 self.collectionView.reloadData() // обновление таблицы после получения данных
@@ -44,14 +44,12 @@ final class HomeViewController: UIViewController {
 }
 
 private extension HomeViewController {
-    
-    
     func configureView() {
         view.backgroundColor = .white
         
         let customNavigationBar = CustomNavigationBar()
         self.navigationItem.titleView = customNavigationBar.setTitle()
-        //self.navigationItem.rightBarButtonItem = customNavigationBar.setUpMenuButton()
+        self.navigationItem.rightBarButtonItem = customNavigationBar.setUpMenuButton()
         self.navigationItem.rightBarButtonItem?.tintColor = .white
         
         collectionView.delegate = self

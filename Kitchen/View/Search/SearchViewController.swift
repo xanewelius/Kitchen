@@ -20,7 +20,8 @@ private extension SearchViewController {
         view.backgroundColor = .white
         self.navigationItem.title = "Search"
         let customNavigationBar = CustomNavigationBar()
-        self.navigationItem.titleView = customNavigationBar.setImage()
+        self.navigationItem.titleView = customNavigationBar.setTitle()
+        self.navigationItem.rightBarButtonItem = customNavigationBar.setUpMenuButton()
     }
     
     func layout() {

@@ -13,13 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UINavigationBar.appearance().tintColor = .black
-        //UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -500, vertical: 0), for:UIBarMetrics.default) // меняет отдаление Navigation Bar при переходе между экранами
-        let BarButtonItemAppearance = UIBarButtonItem.appearance()
-        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
-        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .highlighted)
+        //UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -500, vertical: 0), for:UIBarMetrics.default) – меняет отдаление Navigation Bar при переходе между экранами
         
+        //Убирает текст кнопки слева
+//        let BarButtonItemAppearance = UIBarButtonItem.appearance()
+//        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+//        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .highlighted)
+        
+        //Меняет позицию текст кнопки слева
+//        let navigationBarAppearance = UINavigationBarAppearance()
+//        navigationBarAppearance.backButtonAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 10, vertical: 0)
+//        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
 
-        
+        //navigationBarAppearance.setBackIndicatorImage(UIImage(named: "home"), transitionMaskImage: UIImage(named: "home")) - ставит изображение иконки back
         return true
     }
     

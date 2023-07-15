@@ -11,7 +11,7 @@ import CoreLocation
 final class CustomNavigationBar: UIViewController {
     private let profile = ProfileViewController()
     
-    private let navigationView = UIView(frame: CGRect(x: 0, y: 0, width: 343, height: 50))
+    private let navigationView = UIView(frame: CGRect(x: 0, y: 0, width: 353, height: 50))
     
     func setTitle() -> UIView {
         let titleLabel = UILabel(frame: CGRect(x: 28, y: 0, width: 0, height: 0))
@@ -33,7 +33,6 @@ final class CustomNavigationBar: UIViewController {
         locationImageView.tintColor = .black
         locationImageView.frame = CGRect(x: 0, y: 0, width: 24, height: 24) // Размер изображения и его позиция
         
-
         navigationView.addSubview(locationImageView)
         navigationView.addSubview(titleLabel)
         navigationView.addSubview(subtitleLabel)
@@ -46,16 +45,16 @@ final class CustomNavigationBar: UIViewController {
         let image = UIImage(named: "image_name")
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: navigationView.frame.width - 44, y: 0, width: 44, height: 44) // Размер изображения и его позиция
-        
+
         navigationView.addSubview(imageView)
-        
+
         return navigationView
     }
     
-    func setUpMenuButton(target: Any?, action: Selector) -> UIBarButtonItem {
+    func setUpMenuButton() -> UIBarButtonItem {
         let menuBtn = UIButton(type: .custom)
         menuBtn.setImage(UIImage(named: "logotgtg"), for: .normal)
-        menuBtn.addTarget(target, action: action, for: .touchUpInside)
+        menuBtn.addTarget(self, action: #selector(setUpMenuButtonTapped), for: .touchUpInside)
         
         menuBtn.layer.cornerRadius = 22
         menuBtn.clipsToBounds = true
@@ -72,7 +71,6 @@ final class CustomNavigationBar: UIViewController {
     @objc func setUpMenuButtonTapped() {
         self.navigationController?.pushViewController(self.profile, animated: true)
     }
-
 }
 
 

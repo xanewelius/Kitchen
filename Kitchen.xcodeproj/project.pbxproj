@@ -21,6 +21,7 @@
 		400B67202A602FAC008D883B /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 400B671F2A602FAC008D883B /* Nuke */; };
 		400B67222A6054AE008D883B /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400B67212A6054AD008D883B /* CustomNavigationBar.swift */; };
 		400B672C2A6179E2008D883B /* KitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400B672B2A6179E2008D883B /* KitchenViewController.swift */; };
+		400B672F2A62D059008D883B /* DishesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400B672E2A62D059008D883B /* DishesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		400B671C2A6024F6008D883B /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		400B67212A6054AD008D883B /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		400B672B2A6179E2008D883B /* KitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenViewController.swift; sourceTree = "<group>"; };
+		400B672E2A62D059008D883B /* DishesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +117,9 @@
 		400B67262A617969008D883B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				400B672D2A62D033008D883B /* Kitchen */,
 				400B671C2A6024F6008D883B /* HomeCollectionViewCell.swift */,
 				400B67002A561241008D883B /* HomeViewController.swift */,
-				400B672B2A6179E2008D883B /* KitchenViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -144,6 +146,15 @@
 				400B67162A561A65008D883B /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		400B672D2A62D033008D883B /* Kitchen */ = {
+			isa = PBXGroup;
+			children = (
+				400B672B2A6179E2008D883B /* KitchenViewController.swift */,
+				400B672E2A62D059008D883B /* DishesCollectionViewCell.swift */,
+			);
+			path = Kitchen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 			files = (
 				400B67222A6054AE008D883B /* CustomNavigationBar.swift in Sources */,
 				400B671B2A561E21008D883B /* Model.swift in Sources */,
+				400B672F2A62D059008D883B /* DishesCollectionViewCell.swift in Sources */,
 				400B67132A561A38008D883B /* SearchViewController.swift in Sources */,
 				400B672C2A6179E2008D883B /* KitchenViewController.swift in Sources */,
 				400B67152A561A54008D883B /* BagViewController.swift in Sources */,

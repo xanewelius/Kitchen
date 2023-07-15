@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct Initial: Codable {
+struct Initial1: Codable {
     let сategories: [Categories]
+}
+
+struct Initial2: Codable {
+    let dishes: [Dishes]
 }
 
 struct Categories: Codable {
@@ -16,3 +20,14 @@ struct Categories: Codable {
     let name: String
     let image_url: String
 }
+
+struct Dishes: Codable {
+    let id: Int
+    let name: String
+    let price: Int
+    let weight: Int
+    let description: String
+    let image_url: String
+    let tegs: [String]
+}
+
