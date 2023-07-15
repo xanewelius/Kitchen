@@ -10,12 +10,13 @@ import CoreLocation
 
 final class HomeViewController: UIViewController {
     
+    private let kitchen = KitchenViewController()
     private let collectionInsets = UIEdgeInsets(top: 8, left: 5, bottom: 5, right: 0)
     private var categories: [Categories] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLocation()
+        //setupLocation()
         configureView()
         fetchData()
     }
@@ -43,12 +44,16 @@ final class HomeViewController: UIViewController {
 }
 
 private extension HomeViewController {
+    
+    
     func configureView() {
         view.backgroundColor = .white
+        
         let customNavigationBar = CustomNavigationBar()
         self.navigationItem.titleView = customNavigationBar.setTitle()
-        self.navigationItem.titleView = customNavigationBar.setImage()
-        //navigationItem.rightBarButtonItem = customNavigationBar.setImage()
+        //self.navigationItem.rightBarButtonItem = customNavigationBar.setUpMenuButton()
+        self.navigationItem.rightBarButtonItem?.tintColor = .white
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -58,8 +63,6 @@ private extension HomeViewController {
     }
     
     func layout() {
-
-        
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
@@ -83,6 +86,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let category = categories[indexPath.item]
+        kitchen.fetchData(categories: category)
+        collectionView.deselectItem(at: indexPath, animated: true)
+        self.navigationController?.pushViewController(self.kitchen, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         collectionInsets
     }
@@ -93,19 +103,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 // MARK: - CLLocation
-extension HomeViewController: CLLocationManagerDelegate {
-    private func setupLocation() {
-        let locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let first = locations.first else { return }
-        let lat = String(first.coordinate.latitude)
-        let lon = String(first.coordinate.longitude)
-        print("agag")
-    }
-}
+//extension HomeViewController: CLLocationManagerDelegate {
+//    private func setupLocation() {
+//        let locationManager = CLLocationManager()
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
+//    }
+//
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        guard let first = locations.first else { return }
+//        let lat = String(first.coordinate.latitude)
+//        let lon = String(first.coordinate.longitude)
+//        print("agag")
+//    }
+//}

@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 
 final class CustomNavigationBar: UIViewController {
+    private let profile = ProfileViewController()
     
     private let navigationView = UIView(frame: CGRect(x: 0, y: 0, width: 343, height: 50))
     
@@ -41,6 +42,7 @@ final class CustomNavigationBar: UIViewController {
     }
     
     func setImage() -> UIView {
+        // let image = UIImage(named: image name on profile)
         let image = UIImage(named: "image_name")
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: navigationView.frame.width - 44, y: 0, width: 44, height: 44) // Размер изображения и его позиция
@@ -49,6 +51,28 @@ final class CustomNavigationBar: UIViewController {
         
         return navigationView
     }
+    
+    func setUpMenuButton(target: Any?, action: Selector) -> UIBarButtonItem {
+        let menuBtn = UIButton(type: .custom)
+        menuBtn.setImage(UIImage(named: "logotgtg"), for: .normal)
+        menuBtn.addTarget(target, action: action, for: .touchUpInside)
+        
+        menuBtn.layer.cornerRadius = 22
+        menuBtn.clipsToBounds = true
+
+        let menuBarItem = UIBarButtonItem(customView: menuBtn)
+        let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 44)
+        currWidth?.isActive = true
+        let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 44)
+        currHeight?.isActive = true
+        
+        return menuBarItem
+    }
+
+    @objc func setUpMenuButtonTapped() {
+        self.navigationController?.pushViewController(self.profile, animated: true)
+    }
+
 }
 
 
