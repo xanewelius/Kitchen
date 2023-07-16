@@ -40,17 +40,6 @@ final class CustomNavigationBar: UIViewController {
         return navigationView
     }
     
-    func setImage() -> UIView {
-        // let image = UIImage(named: image name on profile)
-        let image = UIImage(named: "image_name")
-        let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(x: navigationView.frame.width - 44, y: 0, width: 44, height: 44) // Размер изображения и его позиция
-
-        navigationView.addSubview(imageView)
-
-        return navigationView
-    }
-    
     func setUpMenuButton() -> UIBarButtonItem {
         let menuBtn = UIButton(type: .custom)
         menuBtn.setImage(UIImage(named: "logotgtg"), for: .normal)
@@ -68,7 +57,7 @@ final class CustomNavigationBar: UIViewController {
         return menuBarItem
     }
 
-    @objc func setUpMenuButtonTapped() {
+    @objc private func setUpMenuButtonTapped() {
         self.navigationController?.pushViewController(self.profile, animated: true)
     }
 }

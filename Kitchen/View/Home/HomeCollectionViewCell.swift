@@ -23,7 +23,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
@@ -76,7 +76,10 @@ private extension HomeCollectionViewCell {
         contentView.addSubview(imageView)
         contentView.addSubview(titleLabel)
         
-        // Расположение метки внутри ячейки
+        layout()
+    }
+    
+    func layout() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),

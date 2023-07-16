@@ -12,8 +12,8 @@ final class NetworkManager {
     
     static let shared = NetworkManager()
     
-    let categoriesURL = "https://run.mocky.io/v3/058729bd-1402-4578-88de-265481fd7d54"
-    let dishesURL = "https://run.mocky.io/v3/aba7ecaa-0a70-453b-b62d-0e326c859b3b"
+    private let categoriesURL = "https://run.mocky.io/v3/058729bd-1402-4578-88de-265481fd7d54"
+    private let dishesURL = "https://run.mocky.io/v3/aba7ecaa-0a70-453b-b62d-0e326c859b3b"
     
     func jsonParsCategories(compeletionHandler: @escaping ([Categories]) -> Void) {
         guard let url = URL(string: categoriesURL) else { return }

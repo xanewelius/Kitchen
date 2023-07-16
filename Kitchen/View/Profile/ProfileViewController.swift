@@ -19,7 +19,8 @@ private extension ProfileViewController {
     func configureView() {
         view.backgroundColor = .white
         self.navigationItem.title = "Profile"
-        let customNavigationBar = CustomNavigationBar()
+        
+        layout()
     }
     
     func layout() {

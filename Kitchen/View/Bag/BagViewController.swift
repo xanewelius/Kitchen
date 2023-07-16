@@ -22,6 +22,8 @@ private extension BagViewController {
         let customNavigationBar = CustomNavigationBar()
         self.navigationItem.titleView = customNavigationBar.setTitle()
         self.navigationItem.rightBarButtonItem = customNavigationBar.setUpMenuButton()
+        
+        layout()
     }
     
     func layout() {

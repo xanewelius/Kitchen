@@ -174,7 +174,7 @@ private extension DishViewController {
     }
     
     func configureView() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         view.isOpaque = false
         view.addSubview(containerView)
         containerView.addSubview(backgroundImageView)

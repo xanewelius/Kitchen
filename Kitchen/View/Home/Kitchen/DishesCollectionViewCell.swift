@@ -11,7 +11,7 @@ import Nuke
 class DishesCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +19,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
@@ -29,7 +29,7 @@ class DishesCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    let backgroundImageView: UIView = {
+    private let backgroundImageView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
         view.backgroundColor = .systemGray6
